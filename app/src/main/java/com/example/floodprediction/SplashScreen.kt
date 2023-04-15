@@ -15,7 +15,6 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.*
 
-
 @SuppressLint("CustomSplashScreen")
 class SplashScreen : AppCompatActivity() {
     private lateinit var mfusedlocation:FusedLocationProviderClient
@@ -74,7 +73,7 @@ class SplashScreen : AppCompatActivity() {
     }
 
     private fun LocationEnable(): Boolean {
-        var locationManager=getSystemService(LOCATION_SERVICE) as LocationManager
+        var locationManager=getSystemService(Context.LOCATION_SERVICE) as LocationManager
         return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
     }
 
